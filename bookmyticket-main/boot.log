@@ -1,0 +1,117 @@
+﻿> Task :compileJava UP-TO-DATE
+> Task :processResources UP-TO-DATE
+> Task :classes UP-TO-DATE
+> Task :resolveMainClassName
+
+> Task :bootRun
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.5)
+
+2026-07-01T23:33:10.287+05:30  INFO 35140 --- [bookmyticket] [           main] bookmyticket.BookMyTicketApplication     : Starting BookMyTicketApplication using Java 17.0.11 with PID 35140 (C:\Users\1037626\Downloads\bookmyticket-main\bookmyticket-main\build\classes\java\main started by 1037626 in C:\Users\1037626\Downloads\bookmyticket-main\bookmyticket-main)
+2026-07-01T23:33:10.287+05:30  INFO 35140 --- [bookmyticket] [           main] bookmyticket.BookMyTicketApplication     : The following 1 profile is active: "local"
+2026-07-01T23:33:10.955+05:30  INFO 35140 --- [bookmyticket] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-07-01T23:33:11.113+05:30  INFO 35140 --- [bookmyticket] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 151 ms. Found 7 JPA repository interfaces.
+2026-07-01T23:33:11.969+05:30  INFO 35140 --- [bookmyticket] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-07-01T23:33:11.988+05:30  INFO 35140 --- [bookmyticket] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-01T23:33:11.988+05:30  INFO 35140 --- [bookmyticket] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-07-01T23:33:12.076+05:30  INFO 35140 --- [bookmyticket] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-01T23:33:12.076+05:30  INFO 35140 --- [bookmyticket] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1735 ms
+2026-07-01T23:33:12.191+05:30  INFO 35140 --- [bookmyticket] [           main] i.z.t.d.p.embedded.EmbeddedPostgres      : Detected a Windows x86_64 system
+2026-07-01T23:33:12.191+05:30  INFO 35140 --- [bookmyticket] [           main] .z.t.d.p.e.DefaultPostgresBinaryResolver : Detected distribution: 'Unknown'
+2026-07-01T23:33:12.194+05:30  INFO 35140 --- [bookmyticket] [           main] .z.t.d.p.e.DefaultPostgresBinaryResolver : System specific postgres binaries found: 'postgres-windows-x86_64.txz'
+2026-07-01T23:33:12.277+05:30  INFO 35140 --- [bookmyticket] [           main] i.z.t.d.p.embedded.EmbeddedPostgres      : Postgres binaries at C:\Users\1037626\AppData\Local\Temp\embedded-pg\PG-658b574d26d7c664046b7ed814aac03e
+2026-07-01T23:33:12.824+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : The files belonging to this database system will be owned by user "1037626".
+2026-07-01T23:33:12.825+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : This user must also own the server process.
+2026-07-01T23:33:12.825+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : 
+2026-07-01T23:33:12.826+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : The database cluster will be initialized with locale "English_India.1252".
+2026-07-01T23:33:12.827+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : The default text search configuration will be set to "english".
+2026-07-01T23:33:12.827+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : 
+2026-07-01T23:33:12.827+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : Data page checksums are disabled.
+2026-07-01T23:33:12.827+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : 
+2026-07-01T23:33:12.827+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : fixing permissions on existing directory C:/Users/1037626/AppData/Local/Temp/epg10981197875565351967 ... ok
+2026-07-01T23:33:12.835+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : creating subdirectories ... ok
+2026-07-01T23:33:12.838+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : selecting dynamic shared memory implementation ... windows
+2026-07-01T23:33:13.072+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : selecting default max_connections ... 100
+2026-07-01T23:33:13.293+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : selecting default shared_buffers ... 128MB
+2026-07-01T23:33:13.309+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : selecting default time zone ... Asia/Calcutta
+2026-07-01T23:33:13.313+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : creating configuration files ... ok
+2026-07-01T23:33:14.433+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : running bootstrap script ... ok
+2026-07-01T23:33:16.696+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : performing post-bootstrap initialization ... ok
+2026-07-01T23:33:17.200+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : syncing data to disk ... ok
+2026-07-01T23:33:17.201+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : 
+2026-07-01T23:33:17.201+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : Success. You can now start the database server using:
+2026-07-01T23:33:17.201+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : 
+2026-07-01T23:33:17.201+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      :     ^"C^:^\Users^\1037626^\AppData^\Local^\Temp^\embedded^-pg^\PG^-658b574d26d7c664046b7ed814aac03e^\bin^\pg^_ctl^" -D ^"C^:^\Users^\1037626^\AppData^\Local^\Temp^\epg10981197875565351967^" -l logfile start
+2026-07-01T23:33:17.201+05:30  INFO 35140 --- [bookmyticket] [itdb:pid(27524)] i.z.t.d.p.embedded.EmbeddedPostgres      : 
+2026-07-01T23:33:17.214+05:30  INFO 35140 --- [bookmyticket] [           main] i.z.t.d.p.embedded.EmbeddedPostgres      : 9a675a8c-c407-4a69-b1ce-99513a6a38b5 initdb completed in 00:00:04.934
+2026-07-01T23:33:17.558+05:30  INFO 35140 --- [bookmyticket] [           main] i.z.t.d.p.embedded.EmbeddedPostgres      : 9a675a8c-c407-4a69-b1ce-99513a6a38b5 postmaster started as Process[pid=36476, exitValue="not exited"] on port 51382.  Waiting up to PT10S for server startup to finish.
+2026-07-01T23:33:18.384+05:30  INFO 35140 --- [bookmyticket] [gres:pid(36476)] i.z.t.d.p.embedded.EmbeddedPostgres      : waiting for server to start....2026-07-01 23:33:18.385 IST [25356] LOG:  starting PostgreSQL 16.2, compiled by Visual C++ build 1937, 64-bit
+2026-07-01T23:33:18.404+05:30  INFO 35140 --- [bookmyticket] [gres:pid(36476)] i.z.t.d.p.embedded.EmbeddedPostgres      : 2026-07-01 23:33:18.404 IST [25356] LOG:  listening on IPv6 address "::1", port 51382
+2026-07-01T23:33:18.404+05:30  INFO 35140 --- [bookmyticket] [gres:pid(36476)] i.z.t.d.p.embedded.EmbeddedPostgres      : 2026-07-01 23:33:18.405 IST [25356] LOG:  listening on IPv4 address "127.0.0.1", port 51382
+2026-07-01T23:33:18.697+05:30  INFO 35140 --- [bookmyticket] [gres:pid(36476)] i.z.t.d.p.embedded.EmbeddedPostgres      : 2026-07-01 23:33:18.707 IST [3544] LOG:  database system was shut down at 2026-07-01 23:33:16 IST
+2026-07-01T23:33:18.872+05:30  INFO 35140 --- [bookmyticket] [gres:pid(36476)] i.z.t.d.p.embedded.EmbeddedPostgres      : 2026-07-01 23:33:18.873 IST [11544] FATAL:  the database system is starting up
+2026-07-01T23:33:19.001+05:30  INFO 35140 --- [bookmyticket] [gres:pid(36476)] i.z.t.d.p.embedded.EmbeddedPostgres      : 2026-07-01 23:33:19.006 IST [25356] LOG:  database system is ready to accept connections
+2026-07-01T23:33:19.046+05:30  INFO 35140 --- [bookmyticket] [gres:pid(36476)] i.z.t.d.p.embedded.EmbeddedPostgres      :  done
+2026-07-01T23:33:19.046+05:30  INFO 35140 --- [bookmyticket] [gres:pid(36476)] i.z.t.d.p.embedded.EmbeddedPostgres      : server started
+2026-07-01T23:33:19.282+05:30  INFO 35140 --- [bookmyticket] [           main] i.z.t.d.p.embedded.EmbeddedPostgres      : 9a675a8c-c407-4a69-b1ce-99513a6a38b5 postmaster startup finished in 00:00:02.063
+2026-07-01T23:33:19.583+05:30  INFO 35140 --- [bookmyticket] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:51382/postgres (PostgreSQL 16.2)
+2026-07-01T23:33:19.619+05:30  INFO 35140 --- [bookmyticket] [           main] o.f.core.internal.database.base.Schema   : Creating schema "bmt_local" ...
+2026-07-01T23:33:19.619+05:30  INFO 35140 --- [bookmyticket] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "bmt_local"."flyway_schema_history" ...
+2026-07-01T23:33:19.821+05:30  INFO 35140 --- [bookmyticket] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "bmt_local": null
+2026-07-01T23:33:19.833+05:30  INFO 35140 --- [bookmyticket] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "bmt_local" to version "1 - init"
+2026-07-01T23:33:19.895+05:30  INFO 35140 --- [bookmyticket] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "bmt_local" to version "2 - wallet"
+2026-07-01T23:33:19.901+05:30  INFO 35140 --- [bookmyticket] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "bmt_local", now at version v2 (execution time 00:00.065s)
+2026-07-01T23:33:19.980+05:30  INFO 35140 --- [bookmyticket] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-07-01T23:33:20.033+05:30  INFO 35140 --- [bookmyticket] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-07-01T23:33:20.076+05:30  INFO 35140 --- [bookmyticket] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-07-01T23:33:20.329+05:30  INFO 35140 --- [bookmyticket] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-07-01T23:33:20.524+05:30  WARN 35140 --- [bookmyticket] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-07-01T23:33:20.536+05:30  INFO 35140 --- [bookmyticket] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'org.postgresql.ds.PGSimpleDataSource@35fa450f']
+	Database driver: undefined/unknown
+	Database version: 16.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-07-01T23:33:21.430+05:30  INFO 35140 --- [bookmyticket] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-07-01T23:33:21.615+05:30  INFO 35140 --- [bookmyticket] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-07-01T23:33:22.643+05:30  INFO 35140 --- [bookmyticket] [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2026-07-01T23:33:23.055+05:30  INFO 35140 --- [bookmyticket] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-07-01T23:33:23.072+05:30  INFO 35140 --- [bookmyticket] [           main] bookmyticket.BookMyTicketApplication     : Started BookMyTicketApplication in 13.227 seconds (process running for 13.685)
+2026-07-01T23:33:23.547+05:30  INFO 35140 --- [bookmyticket] [           main] bookmyticket.config.DataSeeder           : Seeded/updated 12 movies (with posters)
+2026-07-01T23:33:23.849+05:30  INFO 35140 --- [bookmyticket] [           main] bookmyticket.config.DataSeeder           : Added 13 theatres (new cities)
+2026-07-01T23:33:26.666+05:30  INFO 35140 --- [bookmyticket] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-01T23:33:26.666+05:30  INFO 35140 --- [bookmyticket] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-01T23:33:26.669+05:30  INFO 35140 --- [bookmyticket] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+
+> Task :bootRun FAILED
+.\gradlew : 
+At line:2 char:70
++ ... cket-main"; .\gradlew bootRun --args='--spring.profiles.active=local' ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':bootRun'.
+> Process 'command 'C:\Program Files\Eclipse Adoptium\jdk-17.0.11.9-hotspot\bin\java.exe'' finished with non-zero exit 
+value -1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 31s
+4 actionable tasks: 2 executed, 2 up-to-date

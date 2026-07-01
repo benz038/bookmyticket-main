@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BookMyTicket — Movies & Seat Booking</title>
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo" onclick="go('home')"><b>book</b>my<b>ticket</b></div>
+      <div class="search">
+        <span class="ico">🔍</span>
+        <input id="search" placeholder="Search for Movies by title, genre, language…"
+               oninput="onSearch(this.value)" autocomplete="off" />
+      </div>
+      <div class="loc-wrap">
+        <span class="loc" onclick="toggleCities(event)">📍 <span id="locName">Mumbai</span> ▾</span>
+        <div class="loc-menu" id="locMenu"></div>
+      </div>
+      <div class="spacer"></div>
+      <span class="navlink" id="myBookingsLink" onclick="go('bookings')" style="display:none">My Bookings</span>
+      <div id="auth"></div>
+    </div>
+  </header>
+
+  <main id="app"></main>
+
+  <footer>
+    <div><b>book<i>my</i>ticket</b> · Made with ❤️</div>
+  </footer>
+
+  <div id="toast"></div>
+  <div class="overlay" id="overlay" onclick="closeModal(event)">
+    <div class="modal" id="modal"></div>
+  </div>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/chat.js"></script>
+</body>
+</html>

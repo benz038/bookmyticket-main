@@ -1,0 +1,21 @@
+# Gradle
+.gradle/
+build/
+
+# Runtime logs
+run.log
+run.err
+
+# Plain-javac output (legacy run path)
+out/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Secrets — all config now lives in application.yml with ${ENV:default} placeholders.
+# Override real secrets via environment variables (DB_PASSWORD, GOOGLE_CLIENT_SECRET, ...)
+# or in a git-ignored local override file:
+application-local.yml
+*.local.yml

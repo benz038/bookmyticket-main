@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.4.5'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'bookmyticket'
+version = '1.0.0'
+
+ext {
+    springAiVersion = '1.0.1'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.ai:spring-ai-bom:${springAiVersion}"
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.flywaydb:flyway-core'
+    implementation 'org.flywaydb:flyway-database-postgresql'
+    implementation 'org.springframework.ai:spring-ai-starter-model-openai'
+    runtimeOnly 'org.postgresql:postgresql'
+    // Embedded PostgreSQL, active only under the "local" Spring profile (LocalDataSourceConfig).
+    implementation 'io.zonky.test:embedded-postgres:2.0.7'
+    implementation enforcedPlatform('io.zonky.test.postgres:embedded-postgres-binaries-bom:16.2.0')
+    implementation 'io.zonky.test.postgres:embedded-postgres-binaries-windows-amd64'
+}
