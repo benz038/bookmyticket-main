@@ -3,9 +3,9 @@ spring:
     name: bookmyticket
 
   datasource:
-    url:      ${DB_URL:jdbc:postgresql://ep-calm-math-ap6fhszr.c-7.us-east-1.aws.neon.tech/neondb?sslmode=require}
-    username: ${DB_USERNAME:neondb_owner}
-    password: ${DB_PASSWORD:npg_p3XqaEV4mdQr}
+    url: ${DB_URL:}
+    username: ${DB_USERNAME:}
+    password: ${DB_PASSWORD:}
     hikari:
       maximum-pool-size: 5
       minimum-idle: 1
@@ -36,23 +36,23 @@ spring:
       client:
         registration:
           google:
-            client-id:     ${GOOGLE_CLIENT_ID:712662523021-skkh2jspgu5pcrlmg85l0enu9k03qi9o.apps.googleusercontent.com}
-            client-secret: ${GOOGLE_CLIENT_SECRET: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}
+            client-id: ${GOOGLE_CLIENT_ID:}
+            client-secret: ${GOOGLE_CLIENT_SECRET:}
 
   ai:
     openai:
-      api-key:  ${GROQ_API_KEY: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}
+      api-key: ${GROQ_API_KEY:}
       base-url: ${LLM_BASE_URL:https://api.groq.com/openai}
       chat:
         options:
-          model:       ${LLM_MODEL:llama-3.1-8b-instant}
+          model: ${LLM_MODEL:llama-3.1-8b-instant}
           temperature: 0.3
-    embedding:
-      transformer:
-        enabled: false
+      embedding:
+        transformer:
+          enabled: false
 
 server:
-  port: 8080
+  port: ${PORT:8080}
 
 bookmyticket:
   seat-hold-seconds: 300
