@@ -6,6 +6,7 @@ import bookmyticket.model.Models.Movie;
 import bookmyticket.model.Models.Screen;
 import bookmyticket.model.Models.Seat;
 import bookmyticket.model.Models.Show;
+import bookmyticket.model.Models.ShowSeatStatus;
 import bookmyticket.model.Models.Theatre;
 import bookmyticket.model.Models.User;
 import bookmyticket.repository.Entities.BookingEntity;
@@ -38,6 +39,7 @@ public final class Repositories {
     public static interface ShowSeatJpaRepository extends JpaRepository<ShowSeatEntity, Long> {
         List<ShowSeatEntity> findByShowId(String showId);
         Optional<ShowSeatEntity> findByShowIdAndSeatLabel(String showId, String seatLabel);
+        List<ShowSeatEntity> findByStatusAndHeldUntilBefore(ShowSeatStatus status, Instant before);
     }
 
     public static interface TheatreJpaRepository extends JpaRepository<TheatreEntity, String> {

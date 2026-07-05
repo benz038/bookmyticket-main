@@ -96,9 +96,11 @@ public final class ChatAi {
 
         private final ChatClient chatClient;
         private final boolean configured;
+        private final BookingTools bookingTools;
 
         public ChatService(ChatModel chatModel, ChatMemory chatMemory, BookingTools bookingTools, @Value("${spring.ai.openai.api-key:not-configured}") String apiKey) {
             this.configured = apiKey != null && !apiKey.isBlank() && !"not-configured".equals(apiKey);
+            this.bookingTools = bookingTools;
             this.chatClient = ChatClient.builder(chatModel).defaultSystem(SYSTEM_PROMPT).defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory).build()).defaultTools(bookingTools).build();
         }
 
@@ -110,13 +112,28 @@ public final class ChatAi {
             if (!configured) {
                 return "The AI assistant isn't configured yet. Set a GROQ_API_KEY environment variable " + "(get a free key at https://console.groq.com) and restart the app.";
             }
+            log.info("AI chat request: {}", message);
+            if (looksLikeLocationRequest(message)) {
+                String cities = bookingTools.listCities();
+                log.info("Returning direct city list: {}", cities);
+                return cities;
+            }
             Map<String, Object> toolContext = user == null ? Map.of() : Map.of(BookingTools.USER_KEY, user);
             try {
-                return chatClient.prompt().user(message).advisors(a -> a.param(ChatMemory.CONVERSATION_ID, conversationId)).toolContext(toolContext).call().content();
+                String reply = chatClient.prompt().user(message).advisors(a -> a.param(ChatMemory.CONVERSATION_ID, conversationId)).toolContext(toolContext).call().content();
+                log.info("AI chat response: {}", reply);
+                return reply;
             } catch (Exception e) {
                 log.error("AI chat call failed", e);
                 return "The AI assistant is temporarily unavailable right now. Please try again in a moment.";
             }
+        }
+
+        private boolean looksLikeLocationRequest(String message) {
+            if (message == null) return false;
+            String text = message.trim().toLowerCase(Locale.ENGLISH);
+            return (text.contains("location") || text.contains("locations") || text.contains("city") || text.contains("cities") || text.contains("where"))
+                    && (text.contains("available") || text.contains("show") || text.contains("list") || text.contains("which") || text.contains("find") || text.contains("available"));
         }
     }
 
