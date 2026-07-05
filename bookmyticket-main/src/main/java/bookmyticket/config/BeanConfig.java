@@ -13,6 +13,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.filter.CommonsRequestLoggingFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
+
+import java.time.Clock;
 
 @Configuration
 public class BeanConfig {
@@ -49,5 +52,15 @@ public class BeanConfig {
         loggingFilter.setBeforeMessagePrefix("[REQUEST] ");
         loggingFilter.setAfterMessagePrefix("[REQUEST] ");
         return loggingFilter;
+    }
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
+
+    @Bean
+    public Clock clock() {
+        return Clock.systemUTC();
     }
 }
