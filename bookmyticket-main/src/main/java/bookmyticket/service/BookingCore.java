@@ -318,7 +318,6 @@ public final class BookingCore {
         }
     }
 
-    @Component
     public static class DbSeatLockProvider implements SeatLockProvider {
 
         private final ShowSeatJpaRepository repo;
