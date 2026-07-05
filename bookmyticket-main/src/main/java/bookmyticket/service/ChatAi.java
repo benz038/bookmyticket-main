@@ -58,6 +58,8 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public final class ChatAi {
 
@@ -67,6 +69,8 @@ public final class ChatAi {
     @Service
     public static class ChatService {
 
+        private static final Logger log = LoggerFactory.getLogger(ChatService.class);
+
         private static final String SYSTEM_PROMPT = """
                 You are the BookMyTicket assistant. You help users browse movies and book cinema tickets
                 entirely through chat. Be friendly, concise and use INR (₹) for all prices.
@@ -74,6 +78,9 @@ public final class ChatAi {
                 Rules:
                 - ALWAYS use the provided tools to get real data. NEVER invent movies, showtimes, show ids,
                   seat ids, prices, availability or booking references — if you don't have it, call a tool.
+                - If the user asks for available locations, always call the listCities tool first and include
+                  the returned cities directly in your response. Do not ask the user to select a location
+                  without showing the available city names.
                 - A typical flow: searchMovies → getShowtimes(movieId) → getAvailableSeats(showId) →
                   holdSeats(showId, seats) → (user confirms) → bookSeats(showId, seats, paymentMode).
                 - Seat ids look like A1, B2, C3. Rows: A = REGULAR (₹150), B = PREMIUM (₹250), C = RECLINER (₹400).
@@ -104,7 +111,12 @@ public final class ChatAi {
                 return "The AI assistant isn't configured yet. Set a GROQ_API_KEY environment variable " + "(get a free key at https://console.groq.com) and restart the app.";
             }
             Map<String, Object> toolContext = user == null ? Map.of() : Map.of(BookingTools.USER_KEY, user);
-            return chatClient.prompt().user(message).advisors(a -> a.param(ChatMemory.CONVERSATION_ID, conversationId)).toolContext(toolContext).call().content();
+            try {
+                return chatClient.prompt().user(message).advisors(a -> a.param(ChatMemory.CONVERSATION_ID, conversationId)).toolContext(toolContext).call().content();
+            } catch (Exception e) {
+                log.error("AI chat call failed", e);
+                return "The AI assistant is temporarily unavailable right now. Please try again in a moment.";
+            }
         }
     }
 
