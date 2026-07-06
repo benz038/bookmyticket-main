@@ -29,7 +29,7 @@ public class KeepAliveService {
         this.interval = Duration.ofMinutes(5);
     }
 
-    @Scheduled(fixedDelay = 300000)
+    @Scheduled(fixedDelay = 600000)
     public void keepAlive() {
         Instant now = clock.instant();
         if (!lastPing.plus(interval).isBefore(now)) {
